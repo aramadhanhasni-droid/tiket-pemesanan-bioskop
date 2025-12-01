@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pemesanan Tiket Bioskop</title>
+    <style>
+        body { font-family: Arial; background-color: #f5f5f5; padding: 30px; }
+        form { background: white; padding: 20px; border-radius: 10px; width: 300px; margin: auto; }
+        input, select { width: 100%; padding: 8px; margin: 8px 0; }
+        button { background-color: #007bff; color: white; padding: 10px; border: none; width: 100%; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2 align="center">🎬 Pemesanan Tiket Bioskop</h2>
+    <form method="POST" action="/pesan">
+        <label>Nama Pemesan:</label>
+        <input type="text" name="name" required>
+
+        <label>Pilih Film:</label>
+        <select name="movie" required>
+            {% for film in movies %}
+                <option value="{{ film }}">{{ film }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Pesan Tiket</button>
+    </form>
+</body>
+</html>

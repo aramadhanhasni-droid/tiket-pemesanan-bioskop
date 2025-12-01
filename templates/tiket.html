@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tiket Anda</title>
+    <style>
+        body { font-family: Arial; background-color: #eaf7ff; padding: 40px; }
+        .ticket { background: white; width: 400px; margin: auto; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px gray; }
+        h2 { text-align: center; }
+        p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <h2>🎟️ Tiket Bioskop</h2>
+        <p><b>ID Tiket:</b> {{ ticket.ticket_id }}</p>
+        <p><b>Nama:</b> {{ ticket.name }}</p>
+        <p><b>Film:</b> {{ ticket.movie }}</p>
+        <p><b>Studio:</b> {{ ticket.hall }}</p>
+        <p><b>Kursi:</b> {{ ticket.seat }}</p>
+        <p><b>Waktu Tayang:</b> {{ ticket.show_time }}</p>
+        <p><b>Harga:</b> Rp {{ "{:,}".format(ticket.price) }}</p>
+        <a href="/">← Pesan Tiket Lagi</a>
+    </div>
+</body>
+</html>
